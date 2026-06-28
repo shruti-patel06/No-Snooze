@@ -1,0 +1,29 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper function to check if user is signed in
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // Helper function to check if the user is the owner of the data
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    // User profiles & streak tracking
+    match /users/{userId} {
+      allow read, write: if isOwner(userId);
+    }
+
+    // Goal Tasks
+    match /users/{userId}/tasks/{taskId} {
+      allow read, write: if isOwner(userId);
+    }
+
+    // Escalating Check-Ins
+    match /users/{userId}/tasks/{taskId}/checkins/{checkinId} {
+      allow read, write: if isOwner(userId);
+    }
+  }
+}

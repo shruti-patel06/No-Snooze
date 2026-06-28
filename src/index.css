@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* Smooth custom scrollbars for dark theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+body.focus-light ::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+body.focus-light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+body.focus-light ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* --- FOCUS LIGHT THEME OVERRIDES --- */
+body.focus-light {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+body.focus-light .bg-slate-950 {
+  background-color: #f8fafc !important;
+}
+
+body.focus-light .bg-slate-900 {
+  background-color: #ffffff !important;
+}
+
+body.focus-light .bg-slate-900\/50,
+body.focus-light .bg-slate-900\/60,
+body.focus-light .bg-slate-950\/80 {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+body.focus-light .bg-slate-950\/20 {
+  background-color: rgba(241, 245, 249, 0.4) !important;
+}
+
+body.focus-light .bg-slate-950\/40 {
+  background-color: rgba(241, 245, 249, 0.6) !important;
+}
+
+body.focus-light .bg-slate-900\/40 {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body.focus-light .border-slate-800,
+body.focus-light .border-slate-800\/80,
+body.focus-light .border-slate-800\/60 {
+  border-color: #e2e8f0 !important;
+}
+
+body.focus-light .text-white {
+  color: #0f172a !important;
+}
+
+body.focus-light .text-slate-200 {
+  color: #1e293b !important;
+}
+
+body.focus-light .text-slate-300 {
+  color: #334155 !important;
+}
+
+body.focus-light .text-slate-400 {
+  color: #475569 !important;
+}
+
+body.focus-light .text-slate-500 {
+  color: #64748b !important;
+}
+
+/* Maintain proper accent colors but shift backgrounds for better light mode contrast */
+body.focus-light .bg-rose-500\/10 {
+  background-color: rgba(244, 63, 94, 0.12) !important;
+}
+
+body.focus-light .bg-rose-500\/5 {
+  background-color: rgba(244, 63, 94, 0.08) !important;
+}
+
+body.focus-light .bg-amber-500\/10 {
+  background-color: rgba(245, 158, 11, 0.12) !important;
+}
+
+body.focus-light .bg-amber-500\/5 {
+  background-color: rgba(245, 158, 11, 0.08) !important;
+}
+
+body.focus-light .bg-emerald-500\/5 {
+  background-color: rgba(16, 185, 129, 0.08) !important;
+}
+
+body.focus-light .bg-purple-500\/5 {
+  background-color: rgba(168, 85, 247, 0.08) !important;
+}
+
+body.focus-light .bg-sky-500\/5 {
+  background-color: rgba(14, 165, 233, 0.08) !important;
+}
+
+/* Ensure placeholder text, active inputs, and lists look gorgeous */
+body.focus-light ::placeholder {
+  color: #94a3b8 !important;
+}
+
+body.focus-light input,
+body.focus-light textarea,
+body.focus-light select {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+body.focus-light input:focus,
+body.focus-light textarea:focus,
+body.focus-light select:focus {
+  border-color: #f43f5e !important;
+  outline: none;
+}
+
+/* Hover effects for buttons/cards in light mode */
+body.focus-light .hover\:bg-slate-900:hover {
+  background-color: #f1f5f9 !important;
+}
+
+body.focus-light .hover\:bg-slate-950:hover {
+  background-color: #e2e8f0 !important;
+}
+
+body.focus-light .hover\:border-slate-700:hover {
+  border-color: #cbd5e1 !important;
+}
+
+body.focus-light .group:hover {
+  border-color: #cbd5e1 !important;
+}
+
+/* Ensure tooltips have proper theme context */
+body.focus-light .recharts-tooltip-wrapper .recharts-default-tooltip {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+

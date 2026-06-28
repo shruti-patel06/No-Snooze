@@ -1,0 +1,60 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "User account and streak stats",
+      "type": "object",
+      "properties": {
+        "displayName": { "type": "string" },
+        "email": { "type": "string" },
+        "streak": { "type": "integer" },
+        "maxStreak": { "type": "integer" },
+        "lastActiveDate": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["email", "streak", "maxStreak"]
+    },
+    "Task": {
+      "title": "Accountability Goal Task",
+      "description": "A goal with deadlines, sub-tasks and escalation settings",
+      "type": "object",
+      "properties": {
+        "goal": { "type": "string" },
+        "deadline": { "type": "string" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "escalationLevel": { "type": "string" },
+        "ignoreCount": { "type": "integer" },
+        "subtasks": { "type": "array" }
+      },
+      "required": ["goal", "deadline", "status", "escalationLevel", "ignoreCount", "subtasks"]
+    },
+    "CheckIn": {
+      "title": "Escalated Check-In Log",
+      "description": "Logs of user check-ins and blocker interactions",
+      "type": "object",
+      "properties": {
+        "timestamp": { "type": "string" },
+        "type": { "type": "string" },
+        "blocker": { "type": "string" },
+        "replanned": { "type": "boolean" },
+        "geminiResponse": { "type": "string" }
+      },
+      "required": ["timestamp", "type"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profile and streak data"
+    },
+    "/users/{userId}/tasks/{taskId}": {
+      "schema": "Task",
+      "description": "Goal tasks and scheduled subtasks"
+    },
+    "/users/{userId}/tasks/{taskId}/checkins/{checkinId}": {
+      "schema": "CheckIn",
+      "description": "History of escalating check-ins and blockers"
+    }
+  }
+}

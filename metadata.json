@@ -1,0 +1,10 @@
+{
+  "name": "NoSnooze",
+  "description": "An escalating AI accountability companion that prevents procrastinating on deadlines with interactive checks and structured scheduling",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
